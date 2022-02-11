@@ -5,9 +5,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.nginx
-    # volumes:
-    #   - types: bind
-    #     source:
+    volumes:
+      - types: bind
+        source: /root/.acme.sh/symfony.formatech.site
+        target: /certs
     ports:
       - 80:80
       - 443:443

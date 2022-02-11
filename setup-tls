@@ -1,0 +1,7 @@
+sudo su
+
+curl https://get.acme.sh | sh -s email=ronanlozahic@gmail.com
+
+sh /root/.acme.sh/acme.sh --issue -d symfony.formatech.site -d www.symfony.formatech.site --standalone \
+--pre-hook "docker-compose -f /home/ubuntu/dockersymfony/docker-compose.prod.yml stop" \
+--post-hook "docker-compose -f /home/ubuntu/dockersymfony/docker-compose.prod.yml start"
