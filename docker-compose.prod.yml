@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile.nginx
     volumes:
-      - types: bind
+      - type: bind
         source: /root/.acme.sh/symfony.formatech.site
         target: /certs
     ports:
