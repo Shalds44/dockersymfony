@@ -9,6 +9,9 @@ services:
       - type: bind
         source: /root/.acme.sh/symfony.formatech.site
         target: /certs
+      - type: bind
+        source: .
+        target: /app
     depends_on:
       - fpm
     ports:
